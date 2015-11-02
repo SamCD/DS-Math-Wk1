@@ -103,3 +103,62 @@ D(expression(x*(3^(-5*x))),'x')
 #(3^(-5 * x)) - x * (3^(-5 * x) * (log(3) * 5))
 
 
+#Test 3
+tan(0.001)/0.001 # = 1
+tan(-0.001)/(-0.001) # = 1
+
+x^100 / exp(x)
+lim(x^100)
+lim(exp(x)) = e*lim(x)
+lim(x^100 / exp(x)) = inf/e*inf = 1/e
+
+lim(x/y) = lim (x'/y')
+D(expression(sin(2*x)^-1),'x') # -(sin(2 * x)^-(1 + 1) * (cos(2 * x) * 2))
+D(expression(x),'x') # = 1
+lim = -(sin(2*x)^-2 * 2*cos*2*x)
+
+1/cos(3*(pi/2.001))*cos(5*(pi/2.001))
+= -1.666664
+
+lim(1 + a/x)^bx = 1,-1
+
+x <- 1.001
+(2 - x)^tan((pi/2)*x)
+x <- 0.999
+(2 - x)^tan((pi/2)*x)
+lim = 1.89
+
+csc(x) - 1/x = 1/sin(x) - 1/x = (x - sin(x)) / x*sin(x)
+lim(x->0) = x'/y'
+D(expression(x - sin(x)),'x') = 1 - cos(x)
+D(expression(x*sin(x)),'x') = sin(x) + x * cos(x)
+(1-cos(0)) / sin(0) = -Inf
+
+log(log(Inf)) / sqrt(Inf) = Inf / Inf = 1
+
+#Test 4
+install.packages("mosaic")
+library("mosaic")
+
+fx <- function(x){2*x + 5}
+integrate(fx,-2,0)
+
+fx2 <- function(x){sin(x)}
+integrate(fx2,0,pi)
+
+fx3 <- function(x){.5 * (cos(x) + abs(cos(x)))}
+integrate(fx3,0,pi)
+
+antiD((9 * r^2) / sqrt(1 - r^3) ~ r)
+
+antiD(1 / sqrt(5*x + 8) ~ x)
+
+antiD(tan(x/2)^7 * 1/(cos(x/2)^2) ~ x)
+
+antiD(x * exp(2*x) ~ x)
+
+antiD( x^2 / (x + 1) ~ x)
+
+antiD(1 / sqrt(16 - x^2) ~ x)
+
+antiD( x ^ (-3/2) ~ x,lower.bound = 2)
